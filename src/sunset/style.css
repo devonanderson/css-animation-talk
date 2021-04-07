@@ -1,0 +1,128 @@
+:root {
+	--bg-color: hsl(290, 34%, 10%);
+	--star-color: hsl(272, 57%, 95%);
+	--sun-color: hsl(47, 100%, 88%);
+	--moon-color: hsl(274, 93%, 94%);
+	--moon-surface-color: hsl(274, 58%, 89%);
+
+  --veggie-color: hsl(84, 98%, 34%);
+  --trunk-color: hsl(43, 61%, 28%);
+  --coconut-color: hsl(44, 64%, 22%);
+  --sand-color: hsl(36, 98%, 78%);
+  --sand-shadow-color: hsl(34, 85%, 75%);
+  --water-color: hsl(194, 68%, 67%);
+  --water-ripple-color: hsl(190, 71%, 87%);
+	--day-sky-color: hsl(28, 97%, 70%);
+
+	--speed-slow: 2600ms;
+	--speed-med: 1600ms;
+	--speed-fast: 1200ms;
+	--delay-motionpath: 1200ms;
+	--delay-colorfades: 200ms;
+}
+
+.svg-mask {
+	clip-path: url(#clip-path);
+}
+
+.star {
+  fill: var(--star-color);
+  opacity: 0;
+}
+
+.sun-center,
+.sun-shadow {
+	fill: var(--sun-color);
+}
+
+.sun-shadow {
+	opacity: 0.3;
+}
+
+.moon-center,
+.cloud {
+	fill: var(--moon-color);
+}
+
+.cloud {
+  opacity: 0.7;
+}
+
+.moon-pattern {
+	fill: var(--moon-surface-color);
+}
+
+.background {
+	fill: var(--day-sky-color);
+}
+
+.water {
+  fill: var(--water-color);
+}
+
+.water-ripple {
+  fill: var(--water-ripple-color);
+}
+
+.veggie {
+  fill: var(--veggie-color);
+}
+
+.coconut {
+  fill: var(--coconut-color);
+}
+
+.trunk {
+  fill: var(--trunk-color);
+}
+
+.sand {
+  fill: var(--sand-color);
+}
+
+.sand-shadow {
+  fill: var(--sand-shadow-color);
+}
+
+.moon {
+	opacity: 0;
+}
+
+body {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	padding: 0 6em;
+}
+
+main {
+	position: relative;
+	z-index: 100;
+	padding: 0 2em;
+	flex-basis: 50%;
+}
+
+svg.transition {
+  display: block;
+	margin: 3em auto;
+	z-index: 1;
+}
+
+html {
+	background: var(--bg-color);
+	color: var(--bg-color);
+}
+
+body {
+	background-size: 360px;
+}
+
+.svg-defs {
+	display: none;
+}
+
+
+/* ANIMATION */
