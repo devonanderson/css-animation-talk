@@ -23,7 +23,7 @@ Going to the starting point
 
 Pastebin for complex styles
 --
-https://pastebin.com/EvZpSBbR
+https://pastebin.com/G1XJffEP
 
 Running the animations
 --
