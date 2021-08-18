@@ -17,7 +17,7 @@ Once inside the project directory
 Going to the starting point
 --
 ``` bash
-% git checkout
+% git checkout 4d036581506459f8f9efb4077cdcb97d39b753e4
 
 ```
 

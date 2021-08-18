@@ -126,3 +126,141 @@ body {
 
 
 /* ANIMATION */
+
+.sun {
+  offset-path: path(
+    "M107.35,727.94A304.79,304.79,0,0,1-20,739.51a319.27,319.27,0,0,1-119.14-39.12A340.8,340.8,0,0,1-237,617.77a357.93,357.93,0,0,1-78.3-252.49,339.85,339.85,0,0,1,34-123.49,319.66,319.66,0,0,1,76.1-99.66A305.13,305.13,0,0,1-93.67,79.61,304.64,304.64,0,0,1,33.69,68a319.87,319.87,0,0,1,119.15,39.13,339.85,339.85,0,0,1,97.86,82.61A353.53,353.53,0,0,1,314,308.54a353.48,353.48,0,0,1,15,133.73A339.93,339.93,0,0,1,295,565.75a320.39,320.39,0,0,1-76.11,99.71,305.23,305.23,0,0,1-111.58,62.48m.24.77C277.76,676,370.59,487.7,315,308.25S76.25,26.08-93.91,78.84s-263,241-207.35,420.47,238.69,282.16,408.85,229.4Z"
+  );
+  offset-distance: 32%;
+  transform-origin: 208px 103px;
+  transition: offset-distance var(--speed-med) cubic-bezier(0.215, 0.61, 0.355, 1) var(--delay-motionpath);
+}
+
+.moon {
+  offset-path: path(
+    "M675,101.23a304.55,304.55,0,0,1,98.23,81.88A319.33,319.33,0,0,1,829.83,295a341.1,341.1,0,0,1,10.78,127.62,357.92,357.92,0,0,1-123.18,233.9A339.81,339.81,0,0,1,606.1,719.84,319.59,319.59,0,0,1,481.81,736.5,306.56,306.56,0,0,1,260.48,619.93,319.71,319.71,0,0,1,203.89,508,339.94,339.94,0,0,1,193.11,380.4,358,358,0,0,1,316.29,146.51,340.05,340.05,0,0,1,427.61,83.2,320.47,320.47,0,0,1,551.93,66.51,305.23,305.23,0,0,1,675,101.23m.38-.71C517.75,17.5,319,85,231.45,251.21s-30.74,368.3,126.89,451.32,356.39,15.54,443.94-150.7S833,183.53,675.39,100.52Z"
+  );
+  offset-distance: 23%;
+  transform-origin: 260px 430px;
+  transition: all var(--speed-fast) cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.transition:hover {
+	--day-sky-color: hsl(253, 36%, 51%);
+  --sand-color: hsl(26, 43%, 42%);
+  --sand-shadow-color: hsl(23, 47%, 35%);
+  --water-color: hsl(218, 43%, 26%);
+  --water-ripple-color: hsl(208, 45%, 34%);
+  --veggie-color: hsl(65, 45%, 34%);
+  --trunk-color: hsl(43, 61%, 17%);
+  --coconut-color: hsl(44, 63%, 14%);
+}
+
+.star {
+	transition: opacity var(--speed-fast) linear var(--delay-colorfades);
+}
+
+.cloud {
+  transform: translateX(400px);
+  transition: transform var(--speed-fast) cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.transition:hover .sun {
+  offset-distance: 43%;
+  transition: offset-distance var(--speed-fast) cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.transition:hover	.moon {
+  opacity: 1;
+  offset-distance: 39%;
+  transition: offset-distance var(--speed-med) cubic-bezier(0.215, 0.61, 0.355, 1) var(--delay-motionpath);
+}
+
+.transition:hover .star {
+  opacity: 1;
+  transition: opacity var(--speed-fast) linear;
+}
+
+.transition:hover	.cloud {
+  transform: translateX(0);
+  transition: transform var(--speed-med) cubic-bezier(0.215, 0.61, 0.355, 1) var(--delay-motionpath);
+}
+
+.color-fade-transition {
+	transition: fill var(--speed-slow) linear var(--delay-colorfades);
+}
+
+.transition:hover .color-fade-transition {
+  transition: fill var(--speed-fast) linear var(--delay-colorfades);
+}
+
+@keyframes sunPulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+.sun-shadow {
+	opacity: 0.3;
+  animation: sunPulse 3s linear infinite;
+  transform-origin: 18% 8%;
+}
+
+@keyframes rippleFront {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-30px, 10px);
+  }
+}
+
+@keyframes rippleBack {
+  0% {
+    opacity: 0;
+    transform: translate(0);
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(20px, 0px);
+  }
+}
+
+#ripple-front-1 {
+  animation: rippleFront 4s ease infinite;
+}
+
+#ripple-front-2 {
+  animation: rippleFront 4s 2s ease infinite;
+}
+
+#ripple-back-1 {
+  animation: rippleBack 4s ease infinite;
+}
+
+#ripple-back-2 {
+  animation: rippleBack 4s 2s ease infinite;
+}
